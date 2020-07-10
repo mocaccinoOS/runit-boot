@@ -4,7 +4,7 @@
 
 if [ -x /usr/lib/systemd/systemd-udevd ]; then
     _udevd=/usr/lib/systemd/systemd-udevd
-elif [ -x /sbin/udevd -o -x /bin/udevd ]; then
+elif [ -x /sbin/udevd -o -x /bin/udevd -o -x /usr/sbin/udevd ]; then
     _udevd=udevd
 else
     msg_warn "cannot find udevd!"
