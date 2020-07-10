@@ -1,6 +1,7 @@
 #!/bin/sh
 # shutdown - shutdown(8) lookalike for runit
 
+PATH=/usr/bin:/usr/sbin:/bin/:/sbin
 single() {
   runsvchdir single
 }
