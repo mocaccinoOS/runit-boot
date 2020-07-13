@@ -3,8 +3,9 @@
 PATH=/usr/bin:/usr/sbin:/bin/:/sbin
 MSG="System is going down..."
 
+chmod 100 /run/runit/stopit
 # We check for this file in stage3 to halt or reboot
-touch /run/runit/reboot
+chmod 100 /run/runit/reboot 
 
 # Proceed with shutdown process
 echo "$MSG" | wall
