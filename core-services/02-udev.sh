@@ -12,6 +12,7 @@ fi
 
 if [ -n "${_udevd}" ]; then
     msg "Starting udev and waiting for devices to settle..."
+    udevadm hwdb --update
     ${_udevd} --daemon
     udevadm trigger --action=add --type=subsystems
     udevadm trigger --action=add --type=devices
