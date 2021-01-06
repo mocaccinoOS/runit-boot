@@ -7,5 +7,4 @@
 msg "Loading kernel modules..."
 modules-load -v | tr '\n' ' ' | sed 's:insmod [^ ]*/::g; s:\.ko\(\.gz\)\? ::g'
 
-modprobe e1000 # XXX: Remove me
 echo
