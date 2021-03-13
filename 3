@@ -9,10 +9,14 @@ detect_virt
 
 echo
 msg "Waiting for services to stop..."
-sv force-stop /var/service/*
-sv exit /var/service/*
+sv force-stop /run/runit/runsvdir/current/*
+sv exit /run/runit/runsvdir/current/*
 
 [ -x /etc/rc.shutdown ] && /etc/rc.shutdown
+
+if [ -e "/usr/bin/yip-init" ]; then
+    /usr/bin/yip-init "shutdown"
+fi
 
 if [ -z "$VIRTUALIZATION" ]; then
     msg "Saving random seed..."
